@@ -10,12 +10,24 @@ class HomeController extends Controller
 {
     public function index(Request $request)
     {
+        $angka = [];
+
+        $angka[0] = rand(1, 50);
+
+        $angka[1] = rand(1, 50);
+
         if ( $request == null or collect($request)->count() == 0 ) {
             
             $request->session()->forget(['gagal', 'sukses']);
             
-            return view('depan');
+            return view('depan', compact('angka'));
 
+        } elseif ( ( $request !== null or collect($request)->count() !== 0 ) && $request->pengaman !== $request->kunci ) {
+            
+            Session::flash('salah', '');
+
+            return view('depan', compact('angka'));
+        
         } else {
 
             $query = Certificate::where(
@@ -25,7 +37,7 @@ class HomeController extends Controller
                 ])
                 ->get();
             
-            if ( $query->count() == 1 ) {
+            if ( $query->count() == 1 && $request->pengaman == $request->kunci ) {
                 $data = $query->first();
 
                 $request->session()->forget('gagal');
@@ -34,12 +46,12 @@ class HomeController extends Controller
 
                 return view('hasil', compact('data'));
 
-            } elseif ( $query->count() == 0 ) {
+            } elseif ( $query->count() == 0 && $request->pengaman == $request->kunci ) {
                 $request->session()->forget('sukses');
                 
                 Session::flash('gagal', '');
 
-                return view('depan');
+                return view('depan', compact('angka'));
             }
         }
 
