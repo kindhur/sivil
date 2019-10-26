@@ -60,6 +60,12 @@
                                 <hr>
                             @endif
 
+                            @if (Session::has('salah'))
+                                <hr>
+                                <h4 class="color-orange">Angka Pengaman tidak sama <i class="fa fa-warning"></i></h4>
+                                <hr>
+                            @endif
+
                             <div class="row">
                                 <div class="col-sm-12">
                                     <div class="input-group">
@@ -86,6 +92,14 @@
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-id-card"></i></span>
                                         <input type="text" class="form-control" name="no_ijazah" placeholder="Nomor Ijazah" required="">
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-id-card"></i></span>
+                                        <input type="text" class="form-control" name="pengaman" placeholder="Angka Pengaman : {{ $angka[0] }} + {{ $angka[1] }} = " required="">
+                                        <input type="hidden" name="kunci" value="{{ collect($angka)->sum() }}">
                                     </div>
                                 </div>
                                 <button type="submit" class="submit-btn">VERIFIKASI <i class="fa fa-check-square"></i></button>
