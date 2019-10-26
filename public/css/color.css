@@ -1,0 +1,22 @@
+a:hover,
+a:focus,
+a:active,
+.submit-btn:hover,
+.make-offer-form .input-group-addon,
+.feature-icon,
+.actionbutton a,
+.domain-box i {
+    color: #343c3f;
+}
+.overlay {
+    background-color: rgba(28, 59, 97, 1);
+}
+.form-control:focus {
+    border-color: #FFFFFF;
+}
+.feature-cell {
+    box-shadow: 0px 5px 30px rgba(28, 59, 97, 0.4);
+}
+.feature-cell:hover {
+    box-shadow: 0px 20px 40px rgba(28, 59, 97,0.4);
+}

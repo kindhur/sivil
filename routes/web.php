@@ -11,6 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::match(['get', 'post'], '/', 'HomeController@index')->name('depan');
+
+Auth::routes();
+Route::resource('certificate', 'CertificateController');

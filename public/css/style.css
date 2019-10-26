@@ -1,0 +1,330 @@
+@charset "utf-8";
+/*
+	Template Name: DomainPark - Domain For Sale Template
+    Template URL: http://uxdcode.com/demo/DomainPark
+	Author: UXDCODE
+	Author URI : http://www.uxdcode.com/
+    Version: 1.0
+    Description: Domain For Sale Template.
+	Tag: HTML5, CSS3, Domain Broker,Domain For Sale, Responsive Template.
+    */
+
+
+/* Table of Contents
+==================================================
+# Global 
+# Header Area
+# Feature
+# Statistic
+# Call to Actionbutton
+# More Domain
+# Call to action
+# Contact
+# Footer
+# Responsive CSS 
+==================================================
+
+*/
+
+/*===== Global  =====*/
+html,body {
+    background-color: #1c3b61;
+    color: #555;
+    font-family: 'Raleway', sans-serif;
+}
+h1,h2,h3,h4,h5,h6 {
+    color: #555;
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+    letter-spacing: 1.2px;
+    line-height: 1.5;
+    margin: 0 0 10px;
+}
+h1 {
+    font-size: 45px;
+    font-weight: 700;
+}
+h2 {
+    font-size: 24px;
+}
+h3 {
+    font-size: 21px;
+}
+h4 {
+    font-size: 18px;
+}
+h5 {
+    font-size: 16px;
+}
+h6 {
+    font-size: 14px;
+}
+
+p {
+    line-height: 24px;
+    letter-spacing: 1.2px;
+    margin-bottom: 10px;
+}
+a {
+    color: #555555;
+    text-decoration: none;
+}
+a:hover, a:focus, a:active {
+    outline: none;
+    text-decoration: none;
+    color: #03a9f4;
+}
+
+img {
+    height: auto;
+    max-width: 100%;
+}
+.color-white{
+	color: #fff;
+}
+.color-orange{
+	color: #FF9933;
+}
+.color-green{
+	color: #00cc00;
+}
+.section-title{
+	margin-bottom: 50px;
+	text-transform: uppercase;
+	font-weight: 600;
+}
+
+.section-padding{
+	padding-top: 60px;
+	padding-bottom: 60px;
+}
+.overlay{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	display: block;
+	top: 0;
+	right: 0;
+	background-color: rgba(28, 59, 97, .8);
+	z-index: -1;
+}
+.overlay-section{
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    z-index: 1;
+}
+.submit-btn {
+    background-color: #ff9933;
+    border: 1px solid #ff9933;
+    font-size: 16px;
+    padding: 10px 25px;
+    color: #fff;
+    border-radius: 3px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.submit-btn:hover {
+    border: 1px solid #ff9933;
+    padding: 10px 25px;
+    color: #fff;
+}
+.form-control {
+    border-radius: 3px;
+    box-shadow: none;
+    outline: medium none;
+    min-height: 47px;
+    border-color: #777;
+    color: #777;
+    background-color: transparent;
+}
+.form-control:focus{
+	border-color:#03a9f4;
+	box-shadow:none;
+}
+.back-to-top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+}
+.back-to-top i {
+    display: block;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    color: #fff;
+    border-radius: 3px;
+    text-align: center;
+    background-color: #555;
+    transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+}
+.back-to-top i:hover {
+    background-color: #03a9f4;
+}
+
+/*===== Header Area =====*/
+.content{
+    position: float;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+}
+.header-area{
+    height: 100%;
+}
+.header-text-area,.header-form-area{
+    margin-top:100px;
+}
+.value-established{
+	margin-top: 20px;
+}
+.header-area span a{
+    font-size: 21px;
+}
+.header-area span a:hover{
+    color: #fff;
+    text-decoration: underline;
+}
+.make-offer-form h3{
+	margin-bottom: 20px;
+}
+.make-offer-form form {
+    padding: 20px 40PX 30PX;
+    border-right: 3px solid;
+    background-color: rgba(63, 64, 64, 0.9);
+    border-right-color: #fff;
+    position: relative;
+}
+.make-offer-form form::before{
+    content: '';
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    border-bottom: 35px solid;
+    border-bottom-color: #fff;
+    border-left: 35px solid transparent;
+}
+.make-offer-form .input-group{
+	margin-bottom: 20px;
+}
+.make-offer-form .input-group-addon {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #1c3b61;
+    background-color: #fff;
+    border: 1px solid #fff;
+}
+.make-offer-form .form-control {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    box-shadow: none;
+    outline: medium none;
+    min-height: 45px;
+    border-color: #fff;
+    color: #FFFFFF;
+    background-color: transparent;
+}
+
+/*===== Footer =====*/
+
+.footer-area{
+    text-transform: uppercase;
+    padding: 20px 0 5px;
+    background-color: #081228;
+    color: #eee;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    height: 8%;
+}
+
+/*===== Responsive CSS =====*/
+/* md */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .make-offer-form .form-control {
+        min-height: 35px;
+		padding:6px;
+        font-size:12px;
+    }
+	.make-offer-form .input-group-addon {
+    padding: 5px;
+    font-size: 12px;
+    }
+	.footer-area {
+    padding: 12px 0 5px;
+}
+}
+
+@media (max-width: 991px) {
+    .header-text-area {
+        margin-top: 50px;
+    }
+    .header-form-area {
+        margin-top: 20px;
+    }
+    .value-established {
+        margin-top: 20px;
+    }
+    .make-offer-form .form-control {
+        min-height: 35px;
+    }
+    .content{
+        position: relative;
+    }
+    .footer-area{
+        position: relative;
+    }
+}
+
+/* sm */
+@media (min-width: 768px) and (max-width: 991px) {
+    .header-area{
+        padding: 20px 0;
+    }
+}
+
+/* xs */
+@media (max-width: 767px) {
+    .header-area{
+        padding: 20px 0;
+    }
+    .input-group-addon {
+        padding:5px;
+    }
+    .make-offer-form .input-group {
+        margin-bottom: 10px;
+    }
+
+}
+/* XS Portrait */
+@media (max-width: 479px) {
+	
+	h1{
+		font-size: 28px;
+	}
+	h2,h3{
+		font-size: 18px;
+	}
+}
+
+.autocomplete-suggestions { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; border: 1px solid #999; background: #FFF; cursor: default; overflow: auto; -webkit-box-shadow: 1px 4px 3px rgba(50, 50, 50, 0.64); -moz-box-shadow: 1px 4px 3px rgba(50, 50, 50, 0.64); box-shadow: 1px 4px 3px rgba(50, 50, 50, 0.64); }
+.autocomplete-suggestion { padding: 2px 5px; white-space: nowrap; overflow: hidden; }
+.autocomplete-no-suggestion { padding: 2px 5px;}
+.autocomplete-selected { background: #F0F0F0; }
+.autocomplete-suggestions strong { font-weight: bold; color: #000; }
+.autocomplete-group { padding: 2px 5px; font-weight: bold; font-size: 16px; color: #000; display: block; border-bottom: 1px solid #000; }
+
+
