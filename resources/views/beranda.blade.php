@@ -26,7 +26,7 @@
                     <table class="table table-bordered table-striped mb-none" id="datatable-tabletools" data-swf-path="{{ asset('css/copy_csv_xls_pdf.swf') }}">
                         <thead>
                             <tr>
-                                <th>id</th>
+                                <th>No</th>
                                 <th>Nama Mahasiswa</th>
                                 <th>NIM</th>
                                 <th>Program Studi</th>
@@ -36,9 +36,10 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @php $no = 1; @endphp
                             @foreach ($data as $mahasiswa)
                             <tr>
-                                <td>{{ $mahasiswa->id }}</td>
+                                <td>{{ $no++ }}</td>
                                 <td>{{ $mahasiswa->nama_mahasiswa }}</td>
                                 <td>{{ $mahasiswa->nim }}</td>
                                 <td>{{ $mahasiswa->program_studi }}</td>
