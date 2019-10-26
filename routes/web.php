@@ -13,5 +13,5 @@
 
 Route::match(['get', 'post'], '/', 'HomeController@index')->name('depan');
 
-Auth::routes();
+Auth::routes(['register' => false]);
 Route::resource('certificate', 'CertificateController');
