@@ -19,7 +19,7 @@
                     <div class="col-offset-md-3 form-group">
                         <label class="col-md-3 control-label">Program Studi</label>
                         <div class="col-md-6">
-                                <span class="form-control">@if ( $data->kodeprodi == '61201' ) S1 Manajemen @elseif ( $data->kodeprodi == '61201' ) S2 Manajemen @endif</span>
+                                <span class="form-control">@if ( $data->kodeprodi == '61201' ) S1 Manajemen @elseif ( $data->kodeprodi == '61101' ) S2 Manajemen @endif</span>
                         </div>
                     </div>
                     <div class="form-group">
