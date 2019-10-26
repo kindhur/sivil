@@ -1,5 +1,5 @@
 @extends('layouts.template')
-@section('judul', 'Tambah Mahasiswa')
+@section('judul', 'Edit Mahasiswa')
 
 @section('konten')
         
@@ -9,38 +9,38 @@
                 <div class="panel-actions">
                     <a href="#" class="fa fa-caret-down"></a>
                 </div>
-                <h2 class="panel-title">Tambah Mahasiswa</h2>
+                <h2 class="panel-title">Edit Mahasiswa</h2>
             </header>
 
             <div class="panel-body">
 
-                <form class="form-horizontal form-bordered" method="POST" action="{{ route('certificate.store') }}">
-                    @csrf
+                <form class="form-horizontal form-bordered" method="POST" action="{{ route('certificate.update', $data->id) }}">
+                    @csrf @method('PUT') @method('PATCH')
                     <div class="col-offset-md-3 form-group">
                         <label class="col-md-3 control-label">Program Studi</label>
                         <div class="col-md-6">
                             <select name="program_studi" class="form-control">
-                                <option value="61201">S1 Manajemen</option>
-                                <option value="61101">S2 Manajemen</option>
+                                <option value="61201" {{ ($data->kodeprodi == '61201') ? "selected" : "" }}>S1 Manajemen</option>
+                                <option value="61101" {{ ($data->kodeprodi == '61101') ? "selected" : "" }}>S2 Manajemen</option>
                             </select>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-3 control-label">Nama Mahasiswa</label>
                         <div class="col-md-6">
-                            <input type="text" class="form-control" name="nama_mahasiswa">
+                            <input type="text" class="form-control" name="nama_mahasiswa" value="{{ $data->nama_mahasiswa }}">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-3 control-label">NIM</label>
                         <div class="col-md-6">
-                            <input type="text" class="form-control" name="nim">
+                            <input type="text" class="form-control" name="nim" value="{{ $data->nim }}">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-3 control-label">No Ijazah</label>
                         <div class="col-md-6">
-                            <input type="text" class="form-control" name="no_ijazah">
+                            <input type="text" class="form-control" name="no_ijazah" value="{{ $data->no_ijazah }}">
                         </div>
                     </div>
                     <div class="form-group">
@@ -50,7 +50,7 @@
                                     <span class="input-group-addon">
                                     <i class="fa fa-calendar"></i>
                                     </span>
-                                <input type="text" data-plugin-datepicker class="form-control" name="tgl_lulus">
+                                <input type="text" data-plugin-datepicker class="form-control" name="tgl_lulus" value="{{ date('m/d/Y', strtotime($data->tgl_lulus)) }}">
                             </div>
                         </div>
                     </div>
