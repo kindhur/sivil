@@ -5,6 +5,7 @@ namespace Sivil\Http\Controllers;
 use Illuminate\Http\Request;
 use Sivil\Models\Certificate;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\Validator;
 
 class CertificateController extends Controller
 {
@@ -31,6 +32,27 @@ class CertificateController extends Controller
 
     public function store(Request $request)
     {
+
+        $validator = Validator::make($request->all(), [
+            'program_studi' => 'required',
+            'nama_mahasiswa' => 'required|string',
+            'nim' => 'required|string|unique:certificates',
+            'no_ijazah' => 'required|string|unique:certificates',
+            'tgl_lulus' => 'required|string'
+        ], [
+            'program_studi.required' => 'Alamak, pilih dulu lah bosque',
+            'nama_mahasiswa.required' => 'Wajib diisi bosque',
+            'nim.required' => 'Aah bosque ni ada-ada saja, isi dulu bosque',
+            'nim.unique' => 'NIM sudah terpakai bosque',
+            'no_ijazah.required' => 'Aah bosque suka becanda, isi dulu bosque',
+            'no_ijazah.unique'  => 'Pake Nomor Ijazah lainnya bosque',
+            'tgl_lulus.required' => 'Jangan dibiarkan kosong bosque'
+        ])->validated();
+
+        if ( $validator->fails() ) {
+            return redirect()->back()->withErrors($validator)->withInput($request->all());
+        }
+
         $c = new Certificate;
         $c->kode_pt = '073075';
         $c->nama_pt = 'Sekolah Tinggi Ilmu Ekonomi IBMT';
