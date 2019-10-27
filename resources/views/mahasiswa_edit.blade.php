@@ -23,24 +23,36 @@
                                 <option value="61201" {{ ($data->kodeprodi == '61201') ? "selected" : "" }}>S1 Manajemen</option>
                                 <option value="61101" {{ ($data->kodeprodi == '61101') ? "selected" : "" }}>S2 Manajemen</option>
                             </select>
+                            @error('program_studi')
+                            <label for="fullname" class="error">{{ $message }}</label>
+                            @enderror
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-3 control-label">Nama Mahasiswa</label>
                         <div class="col-md-6">
                             <input type="text" class="form-control" name="nama_mahasiswa" value="{{ $data->nama_mahasiswa }}">
+                            @error('nama_mahasiswa')
+                            <label for="fullname" class="error">{{ $message }}</label>
+                            @enderror
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-3 control-label">NIM</label>
                         <div class="col-md-6">
                             <input type="text" class="form-control" name="nim" value="{{ $data->nim }}">
+                            @error('nim')
+                            <label for="fullname" class="error">{{ $message }}</label>
+                            @enderror
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-3 control-label">No Ijazah</label>
                         <div class="col-md-6">
                             <input type="text" class="form-control" name="no_ijazah" value="{{ $data->no_ijazah }}">
+                            @error('no_ijazah')
+                            <label for="fullname" class="error">{{ $message }}</label>
+                            @enderror
                         </div>
                     </div>
                     <div class="form-group">
@@ -52,6 +64,9 @@
                                     </span>
                                 <input type="text" data-plugin-datepicker class="form-control" name="tgl_lulus" value="{{ date('m/d/Y', strtotime($data->tgl_lulus)) }}">
                             </div>
+                            @error('tgl_lulus')
+                            <label for="fullname" class="error">{{ $message }}</label>
+                            @enderror
                         </div>
                     </div>
                     <div class="row">

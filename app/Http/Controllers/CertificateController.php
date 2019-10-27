@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Sivil\Models\Certificate;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 
 class CertificateController extends Controller
 {
@@ -85,6 +86,27 @@ class CertificateController extends Controller
 
     public function update(Request $request, $id)
     {
+        
+        $validator = Validator::make($request->all(), [
+            'program_studi'     => 'required',
+            'nama_mahasiswa'    => 'required|string',
+            'nim'               => ['required','string', Rule::unique('certificates')->ignore($id)],
+            'no_ijazah'         => ['required', 'string', Rule::unique('certificates')->ignore($id)],
+            'tgl_lulus'         => 'required|string',
+        ], [
+            'program_studi.required' => 'Alamak, pilih dulu lah bosque',
+            'nama_mahasiswa.required' => 'Wajib diisi bosque',
+            'nim.required' => 'Aah bosque ni ada-ada saja, isi dulu bosque',
+            'nim.unique' => 'NIM sudah terpakai bosque',
+            'no_ijazah.required' => 'Aah bosque suka becanda, isi dulu bosque',
+            'no_ijazah.unique'  => 'Pake Nomor Ijazah lainnya bosque',
+            'tgl_lulus.required' => 'Jangan dibiarkan kosong bosque'
+        ]);
+
+        if ( $validator->fails() ) {
+            return redirect()->back()->withErrors($validator)->withInput($request->all());
+        }
+
         $c = Certificate::find($id);
 
         $c->kode_pt = '073075';

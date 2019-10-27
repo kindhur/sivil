@@ -46,7 +46,7 @@
 			<!-- start: header -->
 			<header class="header">
 				<div class="logo-container">
-					<a href="{{ route('depan') }}" class="logo">
+					<a href="{{ route('depan') }}" class="logo" target="_blank">
 						<img src="{{ asset('images/logo.png') }}" height="35" alt="Sivilis" />
 					</a>
 					<div class="visible-xs toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html" data-fire-event="sidebar-left-opened">
