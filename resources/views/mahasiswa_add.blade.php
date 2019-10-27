@@ -19,10 +19,10 @@
                     <div class="col-offset-md-3 form-group">
                         <label class="col-md-3 control-label">Program Studi</label>
                         <div class="col-md-6">
-                            <select name="program_studi" class="form-control" value="{{ old('program_studi') }}">
+                            <select name="program_studi" class="form-control">
                                 <option value="">Pilih Program Studi ...</option>
-                                <option value="61201">S1 Manajemen</option>
-                                <option value="61101">S2 Manajemen</option>
+                                <option value="61201" {{ ( old('program_studi') == '61201' ) ? "selected" : "" }}>S1 Manajemen</option>
+                                <option value="61101" {{ ( old('program_studi') == '61101' ) ? "selected" : "" }}>S2 Manajemen</option>
                             </select>
                             @error('program_studi')
                             <label for="fullname" class="error">{{ $message }}</label>
