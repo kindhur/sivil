@@ -63,7 +63,7 @@
                                     <span class="input-group-addon">
                                     <i class="fa fa-calendar"></i>
                                     </span>
-                                <input type="text" data-plugin-datepicker class="form-control" name="tgl_lulus">
+                                <input type="text" data-plugin-datepicker class="form-control" name="tgl_lulus" value="{{ old('tgl_lulus') }}">
                             </div>
                             @error('tgl_lulus')
                             <label for="fullname" class="error">{{ $message }}</label>
