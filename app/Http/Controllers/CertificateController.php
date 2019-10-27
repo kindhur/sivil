@@ -47,7 +47,7 @@ class CertificateController extends Controller
             'no_ijazah.required' => 'Aah bosque suka becanda, isi dulu bosque',
             'no_ijazah.unique'  => 'Pake Nomor Ijazah lainnya bosque',
             'tgl_lulus.required' => 'Jangan dibiarkan kosong bosque'
-        ])->validated();
+        ]);
 
         if ( $validator->fails() ) {
             return redirect()->back()->withErrors($validator)->withInput($request->all());
