@@ -12,6 +12,9 @@
 */
 
 Route::match(['get', 'post'], '/', 'HomeController@index')->name('depan');
+Route::get('/disclaimer', function (){
+    return view('disclaimer');
+})->name('disclaimer');
 
 Auth::routes(['register' => false]);
 Route::resource('certificate', 'CertificateController');

@@ -119,7 +119,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-7">
-                    <div class="copyright-text">© All Rights Reserved</div>
+                    <div class="copyright-text"><a href="{{ route('disclaimer') }}" class="copyright-text">© All Rights Reserved</a></div>
                 </div>
                 <div class="col-xs-5 text-right"></div>
             </div>
